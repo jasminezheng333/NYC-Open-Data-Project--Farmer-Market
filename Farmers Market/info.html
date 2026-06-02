@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>NYC Farmers Markets </title>
+  <link href="style.css" rel="stylesheet">
+  <script src="script.js"></script>
+</head>
+
+<body onload="init()">
+
+<nav class="container">
+      <a href="index.html">Home Page</a>
+      <a href="info.html">Information</a>
+      <a href="analysis.html">Analysis</a>
+</nav>
+
+  <div id="banner" class="container center">
+    <div style="text-align:center">
+      <h1>NYC Open Data</h1>
+      <h2> NYC FARMERS MARKETS </h2>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div id="leftPanel">
+
+      <div class="card">
+        <h3>SEARCH BY MARKET NAME</h3>
+        <input type="text" id="name" placeholder="Enter Market Name">
+        <hr>
+        <a class="button" onclick="filterByMarketName()">Search</a>
+      </div>
+
+      <div class="card">
+        <h3>SEARCH BY BOROUGH</h3>
+        <input type="text" id="borough" placeholder="Enter Borough">
+        <hr>
+        <a class="button" onclick="filterByBorough()">Search</a>
+      </div>
+
+      <div class="card">
+        <h3>SEARCH BY STREET ADDRESS</h3>
+        <input type="text" id="address" placeholder="Enter Street Address">
+        <hr>
+        <a class="button" onclick="filterByAddress()">Search</a>
+      </div>
+
+      <div class="card">
+        <h3>SEARCH BY COMMUNITY DISTRICT</h3>
+        <input type="text" id="district" placeholder="Enter Community District">
+        <hr>
+        <a class="button" onclick="filterByDistrict()">Search</a>
+      </div>
+    </div>
+
+    <div id="rightPanel" class="card">
+      <h1>FARMERS MARKETS</h1>
+      <div id="result"></div>
+      <div id="output" class="container"></div>
+    </div>
+
+  </div>
+
+  <div id="footer" class="container center">
+    <h3>FARMERS MARKETS LOCATION BY JASMINE ZHENG AND CHRISTOPHER BEHARRY</h3>
+  </div>
+
+</body>
+</html>
