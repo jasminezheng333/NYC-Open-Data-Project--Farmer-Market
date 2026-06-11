@@ -1,4 +1,4 @@
-let data;
+let data, info, leftPanel, mapObj;
 
 async function init() {
   let response = await fetch("Farmers.json");
@@ -28,6 +28,7 @@ function displayMarkets(markets){
         <p><b>Hours:</b> ${market.hoursoperations}</p>
         <p><b>Accepts EBT:</b> ${market.accepts_ebt}</p>
         <p><b>Open Year Round:</b> ${market.open_year_round}</p>
+        <button onclick="displayLocation('${market.streetaddress}')">Show Map</button>
       </div>
     `;
   }
@@ -80,7 +81,43 @@ function filterByDistrict(){
   displayMarkets(filtered);
 }
 
-
 function resetTo2025(){
   displayMarkets(data);
 }
+
+
+function groupCount(arr, key) {
+  let counts = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    let value = arr[i][key];
+
+    if (counts[value] == undefined) {
+      counts[value] = 1;
+    } else {
+      counts[value]++;
+    }
+  }
+
+  return counts;
+}
+
+function marketsByBorough() {
+  let chartType = document.getElementById("chartType").value;
+
+  let counts = groupCount(data, "borough");
+
+  let columns = [];
+  for (let key in counts) {
+    columns.push([key, counts[key]]);
+  }
+
+  c3.generate({
+    bindto: "#chart",
+    data: {
+      columns: columns,
+      type: chartType
+    }
+  });
+}
+

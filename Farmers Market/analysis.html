@@ -6,77 +6,76 @@
   <title>NYC Farmers Markets - Home</title>
   <link href="style.css" rel="stylesheet">
   <script src="script.js"></script>
-
+  <script src="c3.js"></script>
+  <script src="d3.js"></script>
+  <script src="helper.js"></script>  
+  <script src="script.js"></script>
   <style>
     body {
-      background-color:rgb(143, 173, 145);;
+      background-color:rgb(143, 173, 145);
+      background-image: url(ok.jpg);
     }
   </style>
 </head>
+  
+  <body onload="init()">
+    <nav class="container">
+      <a href="index.html">Home Page</a>
+      <a href="info.html">Information</a>
+      <a href="analysis.html">Analysis</a>
+    </nav>
 
-<body onload="init()"> 
-
-<nav class="container">
-  <a href="index.html">Home Page</a>
-  <a href="info.html">Information</a>
-  <a href="analysis.html">Analysis</a>
-</nav>
-
-<div id="banner" class="container center">
-  <div style="text-align:center">
-    <h1>NYC FARMERS MARKETS</h1>
-    <h2>NYC Open Data Project</h2>
-  </div>
-</div>
-
-
-
-<div class="chart-display">
-  <div class="card">
-      <h3>Charts</h3>
-      <div id="chart"></div>
-  </div>
-</div>
-
-<div class="chart-layout">
-  <div class="chart-controls">
-    <div class="card">
-      <h3>Select Chart Type</h3>
-      <select id="chartType" style="width:100px;">
-        <option value="bar">Bar</option>
-        <option value="pie">Pie</option>
-      </select>
+    <div id="banner" class="container center">
+      <div style="text-align:center">
+        <h1>NYC FARMERS MARKETS ANALYSIS</h1>
+      </div>
     </div>
 
-    <div class="card">
-      <h3>Farmers Markets By Borough</h3>
-      <a class="button" onclick="marketsByBorough()">Show Chart</a>
+    <div class="container">
+      <div id="panel">
+        
+        <div class="card">
+          <h3>Select Chart Type</h3>
+          <select id="chartType" style="width:100px;">
+            <option value="bar">Bar</option>
+            <option value="pie">Pie</option>
+          </select>
+        </div>
+        
+        <div class="card">
+          <h3>Farmers Markets by Borough</h3>
+          <p> Numbers of Farmers' Markets by borough and create a chart to analyze the results.</p>
+          <a class="button" onclick="marketsByBorough()"> Show Chart </a>
+        </div>
+      </div>
+      
+      <div class="card">
+       <div id="chart"></div> <!-- div for chart -->
+      </div>
     </div>
 
-    <div class="card">
-      <h3>Farmers Markets By EBT</h3>
-      <a class="button" onclick="marketsByEBT()">Show Chart</a>
+    <div class="container">
+      <div class="card">
+        <h2>Data Info</h2>
+        <hr>
+        <p><b>Source:</b> NYC Open Data</p>
+        <p><b>Years:</b> 2025 </p>
+        <p><b>Coverage:</b> All NYC Boroughs</p>
+      </div>
+
+      <div class="card">
+        <h2>Description</h2>
+        <hr>
+        <p>This website was created by using public information from NYC open data 
+        to provide locations and informations of farmers markets throughout the five boroughs of New York City. Using the information presented throughout
+        this website, people can explore where farmers markets are located, which borough have the greatest number of markets, and see how markets are distributed 
+        across different neighborhoods.</p>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="container">
-  <div class="card">
-    <h2>Data Info</h2>
-    <p><b>Source:</b> NYC Open Data</p>
-    <p><b>Years:</b> 2025 </p>
-    <p><b>Coverage:</b> All NYC Boroughs</p>
-  </div>
+    <div id="footer" class="container center">
+      <h3>FARMERS MARKETS LOCATION BY JASMINE ZHENG AND CHRISTOPHER BEHARRY</h3>
+    </div>
 
-  <div class="card">
-    <h2>Why Farmers Markets Matter</h2>
-    <p>Farmers markets support local agriculture, improve food access, and strengthen communities across New York City.</p>
-  </div>
-</div>
-
-<div id="footer" class="container center">
-  <h3>FARMERS MARKETS LOCATION BY JASMINE ZHENG AND CHRISTOPHER BEHARRY</h3>
-</div>
-
-</body>
+  </body>
 </html>
