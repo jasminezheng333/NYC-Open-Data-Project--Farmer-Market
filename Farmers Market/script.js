@@ -1,6 +1,5 @@
 let data;
 
-
 async function init() {
   let response = await fetch("Farmers.json");
   data = await response.json();
@@ -14,20 +13,28 @@ async function init() {
 function displayMarkets(markets){
   let output = document.getElementById("output");
   let build = "";
+
   for(let i = 0; i < markets.length; i++){
     let market = markets[i];
+
     build += `
-    <div class="card market">
-      <h3>${market.marketname}</h3>
-      <p><b>Borough:</b> ${market.borough}</p>
-      <p><b>Street:</b> ${market.streetaddress}</p>
-      <p><b>Community District:</b> ${market.community_district}</p>
-      <p><b>Year:</b> ${market.year}</p>
-    </div>
+      <div class="card market">
+        <h3>${market.marketname}</h3>
+        <p><b>Borough:</b> ${market.borough}</p>
+        <p><b>Street:</b> ${market.streetaddress}</p>
+        <p><b>Community District:</b> ${market.community_district}</p>
+        <p><b>Year:</b> ${market.year}</p>
+        <p><b>Days Open:</b> ${market.daysoperation}</p>
+        <p><b>Hours:</b> ${market.hoursoperations}</p>
+        <p><b>Accepts EBT:</b> ${market.accepts_ebt}</p>
+        <p><b>Open Year Round:</b> ${market.open_year_round}</p>
+      </div>
     `;
   }
+
   output.innerHTML = build;
 }
+
 
 function filterByMarketName(){
   let name = document.getElementById("name").value;

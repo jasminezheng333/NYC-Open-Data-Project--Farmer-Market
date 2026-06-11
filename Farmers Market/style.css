@@ -11,24 +11,37 @@ html,body{
   align-items:center;
 }
 
+#banner{
+  background-color:rgb(201, 216, 202);
+  color:rgb(85, 110, 94);
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+#banner h1{
+  font-size:40px;
+}
+
+#banner h2{
+  font-size:30px;
+}
+
 nav{
-  background-color:rgb(115, 138, 116);
+  background-color:rgb(165, 185, 166);
 }
 nav a{
-  color:black;
-  padding:10px;
+  color:rgb(64, 73, 67);
+  padding:7px;
   flex:1;
   text-decoration:none;
   text-align:center;
-}
-nav a:hover{
-  color:white;
+  font-size:18px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
-#banner{
-  background-color:rgb(143, 173, 145);
-  color:white;
+nav a:hover{
+  color:rgb(224, 235, 213);
 }
+
 #footer{
   background-color:rgb(90, 110, 95);
   color:white;
@@ -81,7 +94,7 @@ nav a:hover{
 }
 #output{
   flex-wrap:wrap;  
-  background-color:rgb(218, 238, 218));
+  background-color: rgb(218, 238, 218);
 }
 #leftPanel{
   flex:1;
@@ -97,9 +110,35 @@ nav a:hover{
 .card img{
   height:100px;
 }
-#result{
-  background-color: yellow;
-  color:red;
-  max-width: 200px;
-  font-size: 20px;
+
+#map{
+  height: 500px;
+  width: 100%;
+}
+
+.chart-layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+
+.chart-controls {
+  width: 35%;
+}
+
+
+.chart-display {
+  width: 65%;
+}
+
+ (max-width: 768px) {
+  .chart-layout {
+    flex-direction: column;
+  }
+
+  .chart-controls,
+  .chart-display {
+    width: 100%;
+  }
 }

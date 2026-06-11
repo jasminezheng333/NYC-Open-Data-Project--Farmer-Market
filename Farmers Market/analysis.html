@@ -9,7 +9,7 @@
 
   <style>
     body {
-      background-color:rgb(22, 56, 37)
+      background-color:rgb(143, 173, 145);;
     }
   </style>
 </head>
@@ -17,7 +17,7 @@
 <body onload="init()"> 
 
 <nav class="container">
-  <a href="home.html">Home Page</a>
+  <a href="index.html">Home Page</a>
   <a href="info.html">Information</a>
   <a href="analysis.html">Analysis</a>
 </nav>
@@ -29,22 +29,38 @@
   </div>
 </div>
 
+
+
+<div class="chart-display">
+  <div class="card">
+      <h3>Charts</h3>
+      <div id="chart"></div>
+  </div>
+</div>
+
+<div class="chart-layout">
+  <div class="chart-controls">
+    <div class="card">
+      <h3>Select Chart Type</h3>
+      <select id="chartType" style="width:100px;">
+        <option value="bar">Bar</option>
+        <option value="pie">Pie</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <h3>Farmers Markets By Borough</h3>
+      <a class="button" onclick="marketsByBorough()">Show Chart</a>
+    </div>
+
+    <div class="card">
+      <h3>Farmers Markets By EBT</h3>
+      <a class="button" onclick="marketsByEBT()">Show Chart</a>
+    </div>
+  </div>
+</div>
+
 <div class="container">
-  <div class="card">
-    <h2>Project Overview</h2>
-    <p>This project uses NYC Open Data to map farmers markets across the city.</p>
-  </div>
-
-  <div class="card">
-    <h2>What You Can Do</h2>
-    <ul>
-      <li>Search by market name</li>
-      <li>Filter by borough</li>
-      <li>Find street locations</li>
-      <li>Explore community districts</li>
-    </ul>
-  </div>
-
   <div class="card">
     <h2>Data Info</h2>
     <p><b>Source:</b> NYC Open Data</p>
@@ -52,20 +68,10 @@
     <p><b>Coverage:</b> All NYC Boroughs</p>
   </div>
 
-</div>
-
-<div class="container">
-
   <div class="card">
     <h2>Why Farmers Markets Matter</h2>
     <p>Farmers markets support local agriculture, improve food access, and strengthen communities across New York City.</p>
   </div>
-
-  <div class="card">
-    <h2>Fun Fact</h2>
-    <p>NYC has over 100 farmers markets operating across all five boroughs </p>
-  </div>
-
 </div>
 
 <div id="footer" class="container center">
