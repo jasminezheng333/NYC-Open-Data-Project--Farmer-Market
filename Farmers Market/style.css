@@ -92,6 +92,7 @@ nav a:hover{
   border-radius:4px;
   padding:6px;
   box-shadow:2px 2px 2px black;
+  cursor:pointer;
 }
 .button:hover{
   background-color:rgb(92, 121, 99);
@@ -150,12 +151,56 @@ nav a:hover{
    overflow-y:scroll;
  }
 
-.button{
-  text-decoration:none;
-  background-color:blue;
-  color:white;
-  border-radius:4px;
-  padding:6px;
-  box-shadow:2px 2px 2px black;
-  cursor: pointer;
+#pic{
+  justify-content: center;
+  align-items: center;
+  color:lightcyan;
+  font-size:20px;
+  flex:2;
+}
+
+#pic img{
+  filter:saturate(60%);
+}
+
+#pic img:hover{
+  filter:opacity(100%);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+#chart{
+  min-height:500px;
+  background-color:rgb(234, 243, 236);
+  border-radius:10px;
+  padding:15px;
+}
+
+.c3-title{
+  font-size:20px;
+  font-weight:bold;
+  fill:rgb(58, 81, 60);
+}
+
+.c3-axis text{
+  fill:rgb(58, 81, 60);
+  font-size:13px;
+}
+
+.c3-legend-item text{
+  fill:rgb(58, 81, 60);
+  font-size:13px;
+}
+
+.c3-bar{
+  stroke-width:0;
+}
+
+.c3-bar:hover{
+  opacity:0.8;
+}
+
+.c3-chart-arcs path{
+  stroke:white;
+  stroke-width:2px;
 }

@@ -28,7 +28,7 @@ function displayMarkets(markets){
         <p><b>Hours:</b> ${market.hoursoperations}</p>
         <p><b>Accepts EBT:</b> ${market.accepts_ebt}</p>
         <p><b>Open Year Round:</b> ${market.open_year_round}</p>
-        <button onclick="displayLocation('${market.streetaddress}')">Show Map</button>
+        <button onclick="showMap(${market.latitude}, ${market.longitude})"> Show Map </button>
       </div>
     `;
   }
@@ -108,16 +108,64 @@ function marketsByBorough() {
   let counts = groupCount(data, "borough");
 
   let columns = [];
+
   for (let key in counts) {
     columns.push([key, counts[key]]);
   }
 
   c3.generate({
     bindto: "#chart",
+
+    size: {
+      height: 450
+    },
+
     data: {
       columns: columns,
-      type: chartType
+      type: chartType,
+      colors: {
+        Manhattan: "#5c5c5c",
+        Brooklyn: "#ffd000",
+        Queens: "#ff1100",
+        Bronx: "#00ff40",
+        "Staten Island": "#4c00ff"
+      }
+    },
+
+    title: {
+      text: "NYC Farmers Markets by Borough (2025)"
+    },
+
+    legend: {
+      position: "right"
+    },
+
+    padding: {
+      top: 20,
+      right: 20,
+      bottom: 20,
+      left: 50
     }
   });
 }
 
+function showMap(lat, lon){
+  console.log("Button clicked", lat, lon);
+  let location = [lat, lon];
+
+  if(!mapObj){
+    mapObj = L.map("map");
+
+    L.tileLayer(
+      "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+      {
+        maxZoom: 18,
+        attribution: "&copy; OpenStreetMap"
+      }
+    ).addTo(mapObj);
+  }
+
+  mapObj.setView(location, 18);
+
+  L.marker(location).addTo(mapObj);
+}
