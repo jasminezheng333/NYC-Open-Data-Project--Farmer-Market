@@ -81,11 +81,6 @@ function filterByDistrict(){
   displayMarkets(filtered);
 }
 
-function resetTo2025(){
-  displayMarkets(data);
-}
-
-
 function groupCount(arr, key) {
   let counts = {};
 
@@ -125,7 +120,7 @@ function marketsByBorough() {
       type: chartType,
       colors: {
         Manhattan: "#5c5c5c",
-        Brooklyn: "#ffd000",
+        Brooklyn: "#f0c402",
         Queens: "#ff1100",
         Bronx: "#00ff40",
         "Staten Island": "#4c00ff"
