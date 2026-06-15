@@ -94,10 +94,6 @@
   opacity: 0.3 !important;
 }
 
-.c3-region {
-  fill: steelblue;
-  fill-opacity: 0.1;
-}
 .c3-region text {
   fill-opacity: 1;
 }
@@ -211,12 +207,12 @@
 }
 
 .c3-drag-zoom.enabled {
-  pointer-events: all !important;
+  pointer-events: all;
   visibility: visible;
 }
 
 .c3-drag-zoom.disabled {
-  pointer-events: none !important;
+  pointer-events: none;
   visibility: hidden;
 }
 
